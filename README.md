@@ -2,6 +2,32 @@
 
 MIT StealifyLang LSP, `stealify-lint` (`B8G001`–`B8G016` + `.stealify-rules` + governance `project-rules`), and Wave-2 TypeScript 6.0.3 extension for Awesome-OS **Code - OSS** and **Eclipse Theia**.
 
+## Install & Usage
+
+### 1-Command `.vsix` Install (Awesome-OS Code - OSS / Eclipse Theia / VS Code)
+
+```powershell
+gh release download -R awesome-os/stealifylang-vscode --pattern "*.vsix" --dir "$HOME/.b8g/cas/extensions" --clobber
+```
+
+Or download the `.vsix` from [`Releases`](https://github.com/awesome-os/stealifylang-vscode/releases/latest) and run `code-oss --install-extension <file>.vsix` (or install from Open VSX once published).
+
+### Usage
+
+Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and run:
+
+- **Stealify: Fix All B8G Auto-Migratable Issues** (`stealifyLint.fixAll`)
+- **Stealify: Audit Workspace Governance Project Rules** (`stealifyLint.auditWorkspace`)
+- **Stealify: Switch to Wave-2 Fast TypeScript 6.0.3 (cas-v1)** (`stealify.useFastTypeScript`)
+- **Stealify: Compile Active File to .b8e Container** (`stealify.compileToB8e`)
+- **Stealify: Flush Pending Diagnostics** (`stealify.flushDiagnostics`)
+
+Run tests locally (Node.js 22+):
+
+```powershell
+node --test test/*.test.mts
+```
+
 ## Features
 
 - **StealifyLang Grammar & Language Configuration**: Full `.stealify` TextMate grammar (`syntaxes/stealify.tmLanguage.json`) and bracket/folding rules (`language-configuration.json`) for `@defer`, `@placeholder`, `@loading`, `@error`, `@hydrate`, `@isolate`, `@disposable`, `@memo`, container lifecycles, and `B8gMemoryArena` primitives.
