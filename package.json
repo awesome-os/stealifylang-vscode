@@ -1,0 +1,101 @@
+{
+  "name": "stealifylang-vscode",
+  "displayName": "StealifyLang LSP, stealify-lint & Wave-2 TypeScript",
+  "version": "1.0.0",
+  "publisher": "awesome-os",
+  "license": "MIT",
+  "description": "MIT StealifyLang LSP, stealify-lint (B8G001-B8G016 + .stealify-rules + governance project-rules), and Wave-2 TypeScript 6.0.3 extension for Awesome-OS Code - OSS & Eclipse Theia",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awesome-os/stealifylang-vscode.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0",
+    "node": ">=22.18.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "stealifylang",
+    "stealify-lint",
+    "lsp",
+    "awesome-os",
+    "b8g",
+    "typescript",
+    "code-oss",
+    "theia"
+  ],
+  "type": "module",
+  "main": "./src/extension.mts",
+  "scripts": {
+    "test": "node --test test/stealifylang-vscode.test.mts",
+    "lint": "node src/lint/lint-cli.mts src test",
+    "rules": "node src/rules/project-rules.mts src"
+  },
+  "activationEvents": [
+    "onLanguage:stealify",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:python"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "stealify",
+        "aliases": [
+          "StealifyLang",
+          "stealify",
+          "Stealify"
+        ],
+        "extensions": [
+          ".stealify"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "stealify",
+        "scopeName": "source.stealify",
+        "path": "./syntaxes/stealify.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "stealifyLint.fixAll",
+        "title": "Stealify: Fix All B8G Auto-Migratable Issues"
+      },
+      {
+        "command": "stealifyLint.auditWorkspace",
+        "title": "Stealify: Audit Workspace Governance Project Rules"
+      },
+      {
+        "command": "stealify.useFastTypeScript",
+        "title": "Stealify: Switch to Wave-2 Fast TypeScript 6.0.3 (cas-v1)"
+      },
+      {
+        "command": "stealify.compileToB8e",
+        "title": "Stealify: Compile Active File to .b8e Container"
+      },
+      {
+        "command": "stealify.flushDiagnostics",
+        "title": "Stealify: Flush Pending Diagnostics"
+      }
+    ],
+    "configuration": {
+      "title": "StealifyLang",
+      "properties": {
+        "stealify.fastTypeScript.manifestUrl": {
+          "type": "string",
+          "default": "https://raw.githubusercontent.com/awesome-os/b8g-ghost/main/manifests/index.json",
+          "description": "CAS-v1 manifest URL for resolving Wave-2 programmable TypeScript 6.0.3."
+        }
+      }
+    }
+  }
+}

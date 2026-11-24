@@ -1,0 +1,122 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "StealifyLang",
+  "scopeName": "source.stealify",
+  "patterns": [
+    { "include": "#directive-prologue" },
+    { "include": "#comments" },
+    { "include": "#peer-lifecycle-blocks" },
+    { "include": "#container-lifecycles" },
+    { "include": "#physical-memory-primitives" },
+    { "include": "#typescript-superset" }
+  ],
+  "repository": {
+    "directive-prologue": {
+      "patterns": [
+        {
+          "name": "keyword.control.directive.stealify",
+          "match": "\\\"use\\s+stealifylang:[0-9]+(?:\\.[0-9]+)?(?:\\s+[^\\\"]+)?\\\";?"
+        }
+      ]
+    },
+    "peer-lifecycle-blocks": {
+      "patterns": [
+        {
+          "name": "keyword.control.macro.stealify",
+          "match": "@(defer|placeholder|loading|error|hydrate|isolate|disposable|memo|oblivious|component|lifecycle)\\b"
+        },
+        {
+          "name": "support.constant.trigger.stealify",
+          "match": "\\b(on\\s+idle|on\\s+viewport|on\\s+interaction|on\\s+timer|when|prefetch)\\b"
+        }
+      ]
+    },
+    "container-lifecycles": {
+      "patterns": [
+        {
+          "name": "entity.name.function.lifecycle.stealify",
+          "match": "\\b(init|postStart|readiness|liveness|preStop|dispose)(?=\\s*\\()"
+        }
+      ]
+    },
+    "physical-memory-primitives": {
+      "patterns": [
+        {
+          "name": "support.type.primitive.stealify",
+          "match": "\\b(B8gMemoryArena|CapabilityToken|AtomicLease|VirtualFileSystem|StealifyContext|SharedArrayBuffer|ComponentDefinition|BinaryArenaCodec|ProtocolRouter)\\b"
+        },
+        {
+          "name": "support.variable.magic.stealify",
+          "match": "\\b(0x4C4F4142|0x4538427f|0x50473842|0x80000000|0x7FFFFFFF)\\b"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.stealify",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.stealify",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "typescript-superset": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.stealify",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [{ "name": "constant.character.escape.stealify", "match": "\\\\." }]
+        },
+        {
+          "name": "string.quoted.single.stealify",
+          "begin": "'",
+          "end": "'",
+          "patterns": [{ "name": "constant.character.escape.stealify", "match": "\\\\." }]
+        },
+        {
+          "name": "string.template.stealify",
+          "begin": "`",
+          "end": "`",
+          "patterns": [
+            { "name": "constant.character.escape.stealify", "match": "\\\\." },
+            {
+              "name": "meta.template.expression.stealify",
+              "begin": "\\$\\{",
+              "end": "\\}",
+              "patterns": [{ "include": "$self" }]
+            }
+          ]
+        },
+        {
+          "name": "constant.numeric.stealify",
+          "match": "\\b(0x[0-9a-fA-F]+|0b[01]+|0o[0-7]+|\\d+(\\.\\d+)?([eE][+-]?\\d+)?n?)\\b"
+        },
+        {
+          "name": "keyword.control.stealify",
+          "match": "\\b(break|case|catch|class|const|continue|debugger|default|delete|do|else|export|extends|finally|for|function|if|import|in|instanceof|new|return|super|switch|this|throw|try|typeof|var|void|while|with|yield|await|async|as)\\b"
+        },
+        {
+          "name": "storage.type.stealify",
+          "match": "\\b(type|interface|enum|namespace|declare|readonly|public|private|protected|static|abstract|override)\\b"
+        },
+        {
+          "name": "constant.language.stealify",
+          "match": "\\b(true|false|null|undefined|NaN|Infinity)\\b"
+        },
+        {
+          "name": "entity.name.function.stealify",
+          "match": "\\b([A-Za-z_$][A-Za-z0-9_$]*)(?=\\s*\\()"
+        },
+        {
+          "name": "entity.name.type.stealify",
+          "match": "\\b([A-Z][A-Za-z0-9_$]*)\\b"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "ruleOverrides": {
+    "B8G012": "info",
+    "B8G013": "info"
+  }
+}
