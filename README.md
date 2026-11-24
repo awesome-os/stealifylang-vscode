@@ -55,3 +55,15 @@ node --test test/stealifylang-vscode.test.mts
 ## License
 
 [MIT](LICENSE)
+
+## Quick Install & Run (Windows / Linux / macOS)
+
+```powershell
+# Windows (PowerShell) — 1-line VSIX install into Code - OSS / VS Code
+gh release download -R awesome-os/stealifylang-vscode -p "*.vsix" -O "stealifylang-vscode.vsix" --clobber; code --install-extension "stealifylang-vscode.vsix"
+```
+
+```sh
+# Linux & macOS — 1-line VSIX install into Code - OSS / VS Code
+gh release download -R awesome-os/stealifylang-vscode -p "*.vsix" -O "stealifylang-vscode.vsix" --clobber && code --install-extension "stealifylang-vscode.vsix"
+```
