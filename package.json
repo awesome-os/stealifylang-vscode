@@ -1,7 +1,7 @@
 {
   "name": "stealifylang-vscode",
   "displayName": "StealifyLang LSP, stealify-lint & Wave-2 TypeScript",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "awesome-os",
   "license": "MIT",
   "description": "MIT StealifyLang LSP, stealify-lint (B8G001-B8G016 + .stealify-rules + governance project-rules), and Wave-2 TypeScript 6.0.3 extension for Awesome-OS Code - OSS & Eclipse Theia",
