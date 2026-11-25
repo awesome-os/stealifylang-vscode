@@ -1,0 +1,40 @@
+{
+  "schema": "holo-compiler-lockfile-v1",
+  "abiMagic": "0x33564742",
+  "casLayout": "v11",
+  "repo": "awesome-os/stealifylang-vscode",
+  "targets": [
+    "win64",
+    "linux-x64",
+    "linux-arm64",
+    "macos-arm64",
+    "wasm32-wasi"
+  ],
+  "generatedAt": "2026-11-24T23:53:02.473Z",
+  "dependencies": [
+    {
+      "id": "awesome-os/stealifylang-vscode/SHA256SUMS.txt",
+      "kind": "object",
+      "version": "v1.1.0",
+      "target": "any",
+      "sha512": "fa54506b212a9aa2f13e449f54cecb0b00805c424a0da93fdad2cf0590bad4a82071906cde7231d9359f541c8450232efcef0351a050fb8d2f7236f184cd960f",
+      "size": 97,
+      "executable": false,
+      "blob": "v11/files/fa/fa54506b212a9aa2f13e449f54cecb0b00805c424a0da93fdad2cf0590bad4a82071906cde7231d9359f541c8450232efcef0351a050fb8d2f7236f184cd960f",
+      "url": "https://github.com/awesome-os/stealifylang-vscode/releases/download/v1.1.0/SHA256SUMS.txt",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/stealifylang-vscode/stealifylang-vscode-1.1.0.vsix",
+      "kind": "vsix",
+      "version": "v1.1.0",
+      "target": "any",
+      "sha512": "bb0ec7a404d48445878e41df984e837d01bd69fa550bcc4b52ff0b502bbe876c9b9bee8c25514d952df70af92200953d1dfe614d2abad2fb88a2346bfa67744b",
+      "size": 69143,
+      "executable": false,
+      "blob": "v11/files/bb/bb0ec7a404d48445878e41df984e837d01bd69fa550bcc4b52ff0b502bbe876c9b9bee8c25514d952df70af92200953d1dfe614d2abad2fb88a2346bfa67744b",
+      "url": "https://github.com/awesome-os/stealifylang-vscode/releases/download/v1.1.0/stealifylang-vscode-1.1.0.vsix",
+      "dependencies": []
+    }
+  ]
+}
