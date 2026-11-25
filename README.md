@@ -58,12 +58,10 @@ node --test test/stealifylang-vscode.test.mts
 
 ## Quick Install & Run (Windows / Linux / macOS)
 
-```powershell
-# Windows (PowerShell) — 1-line VSIX install into Code - OSS / VS Code
-gh release download -R awesome-os/stealifylang-vscode -p "*.vsix" -O "stealifylang-vscode.vsix" --clobber; code --install-extension "stealifylang-vscode.vsix"
-```
-
 ```sh
-# Linux & macOS — 1-line VSIX install into Code - OSS / VS Code
-gh release download -R awesome-os/stealifylang-vscode -p "*.vsix" -O "stealifylang-vscode.vsix" --clobber && code --install-extension "stealifylang-vscode.vsix"
+# Install / hydrate from v11 CAS via holo-pm
+holo-pm install repository://github.com/awesome-os/stealifylang-vscode@main
+
+# Or project & run directly via holo-project (0-byte hardlink)
+holo-project "project://node/stealifylang-vscode?from=repository://github.com/awesome-os/stealifylang-vscode@main"
 ```
