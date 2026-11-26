@@ -1,3 +1,5 @@
+> [!NOTE] Consolidated into https://github.com/awesome-os/devtools
+
 # stealifylang-vscode
 
 MIT StealifyLang LSP, `stealify-lint` (`B8G001`–`B8G016` + `.stealify-rules` + governance `project-rules`), and Wave-2 TypeScript 6.0.3 extension for Awesome-OS **Code - OSS** and **Eclipse Theia**.
